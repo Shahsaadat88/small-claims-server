@@ -5,7 +5,7 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@Table(Name = "allstateclaims")
+@Table(name = "allstateclaims")
 public class Claim {
 
     @Id
