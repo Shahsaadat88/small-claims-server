@@ -22,7 +22,7 @@ public class Claim {
     private String claimStatus;
     private Integer companyId;
     private Integer lineCd;
-    private String status;
+    private String state;
 
     public Integer getId() {
         return id;
@@ -104,7 +104,15 @@ public class Claim {
         this.lineCd = lineCd;
     }
 
-    public Claim(Integer id, String policyNumber, String claimNumber, Date date, String title, String firstName, String lastName, String claimStatus, Integer companyId, Integer lineCd, String status1) {
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Claim(Integer id, String policyNumber, String claimNumber, Date date, String title, String firstName, String lastName, String claimStatus, Integer companyId, Integer lineCd, String state) {
         this.id = id;
         this.policyNumber = policyNumber;
         this.claimNumber = claimNumber;
@@ -115,7 +123,7 @@ public class Claim {
         this.claimStatus = claimStatus;
         this.companyId = companyId;
         this.lineCd = lineCd;
-        this.status = status1;
+        this.state = state;
     }
 
     public Claim() {
@@ -126,12 +134,12 @@ public class Claim {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Claim claim = (Claim) o;
-        return Objects.equals(id, claim.id) && Objects.equals(policyNumber, claim.policyNumber) && Objects.equals(claimNumber, claim.claimNumber) && Objects.equals(date, claim.date) && Objects.equals(title, claim.title) && Objects.equals(firstName, claim.firstName) && Objects.equals(lastName, claim.lastName) && Objects.equals(claimStatus, claim.claimStatus) && Objects.equals(companyId, claim.companyId) && Objects.equals(lineCd, claim.lineCd) && Objects.equals(status, claim.status);
+        return Objects.equals(id, claim.id) && Objects.equals(policyNumber, claim.policyNumber) && Objects.equals(claimNumber, claim.claimNumber) && Objects.equals(date, claim.date) && Objects.equals(title, claim.title) && Objects.equals(firstName, claim.firstName) && Objects.equals(lastName, claim.lastName) && Objects.equals(claimStatus, claim.claimStatus) && Objects.equals(companyId, claim.companyId) && Objects.equals(lineCd, claim.lineCd) && Objects.equals(state, claim.state);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyNumber, claimNumber, date, title, firstName, lastName, claimStatus, companyId, lineCd, status);
+        return Objects.hash(id, policyNumber, claimNumber, date, title, firstName, lastName, claimStatus, companyId, lineCd, state);
     }
 
     @Override
@@ -147,7 +155,7 @@ public class Claim {
                 ", claimStatus='" + claimStatus + '\'' +
                 ", companyId=" + companyId +
                 ", lineCd=" + lineCd +
-                ", status='" + status + '\'' +
+                ", status='" + state + '\'' +
                 '}';
     }
 }
